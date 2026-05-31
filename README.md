@@ -1,2 +1,3 @@
 # Pytorch-EdTech-AI-project
 The best way to get social impact to your project is to teach others and make it more effectively with the help of education mechanics that the user himself sets in some area 
+for now itws just a non-real students statements marks, but in the future ill try to make it щту ща the most flexible form of training for different people in different industries. For example: Computes-science, chemistry and biology, maths and others...
