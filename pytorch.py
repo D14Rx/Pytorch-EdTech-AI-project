@@ -16,13 +16,20 @@ class EdTech(nn.Module):
         out = torch.sigmoid(out)
         return out
 
-                #TENSORS:
 data = torch.tensor([
-    [0.9, 1.0, 0.8, 1.0], #: great knowledge
+
+    #1-num: math
+    #2-num: physics 
+    #3-num: biology
+    #4-num: chemistry
+    #1-num: alarming or confident (a[0.0]/c[1.0])
+    #2-num: humanitary or technary (h[0.0]/t[1.0])
+
+    [0.9, 1.0, 0.8, 1.0]#: great knowledge
     [0.8, 0.9, 0.8, 1.0], #: great knowledge
     [1.0, 0.9, 0.8, 0.8], #: great knowledge
     [0.5, 0.5, 0.5, 0.5], #: mid knowledge
-    [0.4, 0.6, 0.5, 0.5], #: mid knowledge
+    [0.4, 0.6, 0.5, 0.5],  #: mid knowledge
     [0.5, 0.6, 0.3, 0.6], #: mid knowledge
     [0.2, 0.2, 0.2, 0.2], #: bad knowledge
     [0.1, 0.3, 0.2, 0.1], #: bad knowledge
@@ -30,6 +37,26 @@ data = torch.tensor([
     [1.0, 1.0, 1.0, 1.0], #: ideal knowledge
     [0.0, 0.0, 0.0, 0.0], #: the skipper
 ], dtype=torch.float32)
+
+
+blanket = torch.tensor([
+
+#1-num: alarming or confident (a[0.0]/c[1.0])
+#2-num: humanitary or technary (h[0.0]/t[1.0])
+
+    [1.0, 1.0],
+    [0.0, 1.0],
+    [1.0, 0.9],
+    [0.5, 0.5],
+    [0.4, 0.6],
+    [0.5, 0.6],
+    [0.2, 0.2],
+    [0.1, 0.3],
+    [0.2, 0.1],
+    [1.0, 1.0],
+    [0.0, 0.0],
+], dtype=torch.float32)
+
 
 target = torch.tensor([
     [1.0],  #: great knowledge
@@ -43,7 +70,7 @@ target = torch.tensor([
     [0.1],  
     [1.0],  #: ideal knowledge
     [0.0],  #: the skipper
-    ], dtype=torch.float32)
+], dtype=torch.float32)
 
 model = EdTech()
 
